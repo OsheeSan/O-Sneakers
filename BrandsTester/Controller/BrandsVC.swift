@@ -22,8 +22,7 @@ class BrandsVC: UIViewController {
         if segue.identifier == "showSneakers" {
             let choosenCell = sender as! GoodsCollectionViewCell
             let controller = segue.destination as! SneakersInfoVC
-            controller.model = choosenCell.model
-            controller.brand = choosenCell.brand
+            controller.sneakers = choosenCell.sneakers
         }
         if segue.identifier == "showBrand" {
             let choosenBrand = sender as! UIButton
@@ -67,9 +66,7 @@ extension BrandsVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func showBrands(sender: UIButton){
-        if let brand = sender.titleLabel?.text {
-            performSegue(withIdentifier: "showBrand", sender: sender)
-        }
+        performSegue(withIdentifier: "showBrand", sender: sender)
     }
    
 }

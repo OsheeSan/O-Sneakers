@@ -8,9 +8,10 @@
 import UIKit
 
 class BrandSneakersVC: UIViewController {
-    
+
     var brand = ""
-    var models = [Sneakers]()
+    var sneakers = [Sneakers]()
+    var choosenSneakers: Sneakers?
     let data = Data()
 
     override func viewDidLoad() {
@@ -20,7 +21,7 @@ class BrandSneakersVC: UIViewController {
         title = brand
         for i in 0..<data.brands.count{
             if brand == data.brands[i].name {
-                models = data.brands[i].goods
+                sneakers = data.brands[i].goods
                 break
             }
         }
@@ -29,7 +30,7 @@ class BrandSneakersVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSneakers" {
             let controler = segue.destination as! SneakersInfoVC
-            controler.brand = brand
+            controler.sneakers = choosenSneakers
         }
     }
 
@@ -37,18 +38,19 @@ class BrandSneakersVC: UIViewController {
 
 extension BrandSneakersVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        models.count
+        sneakers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "modelCell")
         let modelLabel = cell?.viewWithTag(1) as! UILabel
-        modelLabel.text = models[indexPath.row].model
+        modelLabel.text = sneakers[indexPath.row].model
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        choosenSneakers = sneakers[indexPath.row]
         performSegue(withIdentifier: "showSneakers", sender: UITableViewCell())
     }
     

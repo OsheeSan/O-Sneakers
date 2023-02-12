@@ -11,7 +11,9 @@ class SneakersInfoVC: UIViewController {
     
     var brand = ""
     var model = ""
-
+    
+    var sneakers: Sneakers?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
@@ -31,16 +33,18 @@ extension SneakersInfoVC: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "image")
             let imageView = cell?.viewWithTag(1) as! UIImageView
             imageView.backgroundColor = .green
+            imageView.alpha = 0.5
+            imageView.layer.cornerRadius = 20
             return cell!
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "brand")
             let brandLabel = cell?.viewWithTag(1) as! UILabel
-            brandLabel.text = brand
+            brandLabel.text = sneakers?.brand
             return cell!
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "model")
             let modelLabel = cell?.viewWithTag(1) as! UILabel
-            modelLabel.text = model
+            modelLabel.text = sneakers?.model
             return cell!
         default:
             return TableViewCell()

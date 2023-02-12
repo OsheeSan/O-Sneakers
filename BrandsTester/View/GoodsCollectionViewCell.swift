@@ -9,23 +9,36 @@ import UIKit
 
 class GoodsCollectionViewCell: UICollectionViewCell {
     
-    var brand = "" {
-        didSet {
-            
-        }
-    }
-    var model = "" {
+    var sneakers: Sneakers? {
         didSet{
-            if let image = UIImage(named: nameToImage(brand: brand, model: model)) {
+            if let image = UIImage(named: nameToImage(brand: sneakers!.brand, model: sneakers!.model)) {
                 imageView.image = image
                 NameLabel.textColor = .black
             } else {
                 imageView.image = UIImage(named: "sneakers-no-image")
                 NameLabel.textColor = .white
             }
-            
+            NameLabel.text = sneakers?.model
         }
     }
+    
+//    var brand = "" {
+//        didSet {
+//
+//        }
+//    }
+//    var model = "" {
+//        didSet{
+//            if let image = UIImage(named: nameToImage(brand: brand, model: model)) {
+//                imageView.image = image
+//                NameLabel.textColor = .black
+//            } else {
+//                imageView.image = UIImage(named: "sneakers-no-image")
+//                NameLabel.textColor = .white
+//            }
+//
+//        }
+//    }
     
     var imageView: UIImageView!
     
