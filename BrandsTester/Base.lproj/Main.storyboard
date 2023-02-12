@@ -48,7 +48,7 @@
                                     <outlet property="delegate" destination="8M0-h0-Ywt" id="V4k-gF-si8"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="iB9-cB-8Oj">
+                            <searchBar contentMode="redraw" placeholder="Find a Model..." translatesAutoresizingMaskIntoConstraints="NO" id="iB9-cB-8Oj">
                                 <rect key="frame" x="16" y="44" width="288" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="1KO-2x-Qgh"/>
@@ -72,10 +72,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="ksu-Ba-08f"/>
+                    <connections>
+                        <segue destination="TQC-3l-TK9" kind="showDetail" identifier="showSneakers" id="08g-ps-nZG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nn5-mK-8vC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2941.875" y="390.84507042253523"/>
+            <point key="canvasLocation" x="2940" y="-376"/>
         </scene>
         <!--O-Sneakers-->
         <scene sceneID="tne-QT-ifu">
@@ -101,13 +104,13 @@
                                                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5BV-lS-uzm">
                                                         <size key="itemSize" width="287" height="86"/>
-                                                        <size key="headerReferenceSize" width="10" height="86"/>
-                                                        <size key="footerReferenceSize" width="10" height="86"/>
+                                                        <size key="headerReferenceSize" width="16" height="86"/>
+                                                        <size key="footerReferenceSize" width="16" height="86"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewCell" id="3E0-s7-37f" customClass="GoodsCollectionViewCell" customModule="BrandsTester" customModuleProvider="target">
-                                                            <rect key="frame" x="10" y="16" width="287" height="86"/>
+                                                            <rect key="frame" x="16" y="16" width="287" height="86"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rv0-xT-vjy">
                                                                 <rect key="frame" x="0.0" y="0.0" width="287" height="86"/>
@@ -141,11 +144,11 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                     <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="qEq-py-tWf">
-                                                        <rect key="frame" x="0.0" y="0.0" width="10" height="118"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="118"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </collectionReusableView>
                                                     <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="footer" id="yN8-Ai-r7y">
-                                                        <rect key="frame" x="297" y="0.0" width="10" height="118"/>
+                                                        <rect key="frame" x="303" y="0.0" width="16" height="118"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </collectionReusableView>
                                                 </collectionView>
@@ -304,7 +307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGn-J9-hnb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2942" y="-331"/>
+            <point key="canvasLocation" x="2940" y="399"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Z6x-Ms-wqk">
@@ -389,6 +392,9 @@
             <point key="canvasLocation" x="116.25" y="26.408450704225352"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="08g-ps-nZG"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="info.circle" catalog="system" width="128" height="123"/>

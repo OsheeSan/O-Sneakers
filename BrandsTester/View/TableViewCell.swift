@@ -32,8 +32,8 @@ extension TableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! GoodsCollectionViewCell
         cell.brand = data.brands[collectionView.tag].name
-        cell.model = data.brands[collectionView.tag].goods[indexPath.row]
-        cell.NameLabel.text = data.brands[collectionView.tag].goods[indexPath.row]
+        cell.model = data.brands[collectionView.tag].goods[indexPath.row].model
+        cell.NameLabel.text = data.brands[collectionView.tag].goods[indexPath.row].model
         return cell
     }
     

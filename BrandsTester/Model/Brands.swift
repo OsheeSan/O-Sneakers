@@ -6,7 +6,9 @@
 //
 
 import Foundation
+
 struct Brand {
     var name: String
-    var goods: [String]
+    var goods: [Sneakers]
+    var logoImageName: String?
 }

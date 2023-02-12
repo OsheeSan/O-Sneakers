@@ -10,7 +10,7 @@ import UIKit
 class BrandSneakersVC: UIViewController {
     
     var brand = ""
-    var models = [String]()
+    var models = [Sneakers]()
     let data = Data()
 
     override func viewDidLoad() {
@@ -25,6 +25,13 @@ class BrandSneakersVC: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showSneakers" {
+            let controler = segue.destination as! SneakersInfoVC
+            controler.brand = brand
+        }
+    }
 
 }
 
@@ -36,8 +43,13 @@ extension BrandSneakersVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "modelCell")
         let modelLabel = cell?.viewWithTag(1) as! UILabel
-        modelLabel.text = models[indexPath.row]
+        modelLabel.text = models[indexPath.row].model
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "showSneakers", sender: UITableViewCell())
     }
     
     
