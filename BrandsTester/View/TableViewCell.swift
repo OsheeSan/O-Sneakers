@@ -18,6 +18,8 @@ class TableViewCell: UITableViewCell{
         CollectionView = viewWithTag(1) as? UICollectionView
         CollectionView?.delegate = self
         CollectionView?.dataSource = self
+        CollectionView?.clipsToBounds = true
+        CollectionView?.layer.cornerRadius = 20
     }
 
 }
@@ -33,10 +35,6 @@ extension TableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.model = data.brands[collectionView.tag].goods[indexPath.row]
         cell.NameLabel.text = data.brands[collectionView.tag].goods[indexPath.row]
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
     }
     
 }

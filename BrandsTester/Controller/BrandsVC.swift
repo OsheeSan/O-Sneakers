@@ -13,6 +13,7 @@ class BrandsVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .black
         overrideUserInterfaceStyle = .dark
+        self.tabBarController?.tabBar.backgroundColor = .black
     }
     
     let data = Data()
@@ -23,17 +24,22 @@ class BrandsVC: UIViewController {
             let controller = segue.destination as! SneakersInfoVC
             controller.model = choosenCell.model
             controller.brand = choosenCell.brand
-            self.tabBarController?.tabBar.backgroundColor = .black
         }
+        if segue.identifier == "showBrand" {
+            let choosenBrand = sender as! UIButton
+            let controller = segue.destination as! BrandSneakersVC
+            controller.brand = choosenBrand.titleLabel!.text!
+        }
+        
     }
-
+    
 }
 
 extension BrandsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableViewCell") as! TableViewCell
         cell.CollectionView?.tag = indexPath.section
@@ -50,10 +56,22 @@ extension BrandsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as! UITableViewHeaderFooterView
+        let brandButton = UIButton()
+        brandButton.frame = header.bounds
+        brandButton.titleLabel?.text = data.brands[section].name
+        header.addSubview(brandButton)
+        brandButton.addTarget(self, action: #selector(showBrands), for: .touchUpInside)
         header.textLabel?.numberOfLines = 0
         header.textLabel?.font = UIFont(name: "Avenir-Book",size: 14)
         header.textLabel?.textColor = .white
     }
+    
+    @objc func showBrands(sender: UIButton){
+        if let brand = sender.titleLabel?.text {
+            performSegue(withIdentifier: "showBrand", sender: sender)
+        }
+    }
+   
 }
 
 

@@ -17,6 +17,8 @@
 		8465525029978FB800E3776D /* Brands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465524F29978FB800E3776D /* Brands.swift */; };
 		8496D0C92998482000E28CD3 /* SneakersInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D0C82998482000E28CD3 /* SneakersInfoVC.swift */; };
 		8496D0CB29984F6500E28CD3 /* Sneakers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D0CA29984F6500E28CD3 /* Sneakers.swift */; };
+		8496D0CD2998ECD400E28CD3 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D0CC2998ECD400E28CD3 /* Functions.swift */; };
+		8496D0CF2999023000E28CD3 /* BrandSneakersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496D0CE2999023000E28CD3 /* BrandSneakersVC.swift */; };
 		849E32122997CE430040D734 /* GoodsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E32112997CE430040D734 /* GoodsCollectionViewCell.swift */; };
 		849E32142997E5050040D734 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E32132997E5050040D734 /* Data.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +36,8 @@
 		8465524F29978FB800E3776D /* Brands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brands.swift; sourceTree = "<group>"; };
 		8496D0C82998482000E28CD3 /* SneakersInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SneakersInfoVC.swift; sourceTree = "<group>"; };
 		8496D0CA29984F6500E28CD3 /* Sneakers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sneakers.swift; sourceTree = "<group>"; };
+		8496D0CC2998ECD400E28CD3 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		8496D0CE2999023000E28CD3 /* BrandSneakersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandSneakersVC.swift; sourceTree = "<group>"; };
 		849E32112997CE430040D734 /* GoodsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsCollectionViewCell.swift; sourceTree = "<group>"; };
 		849E32132997E5050040D734 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +81,7 @@
 				846552422996955E00E3776D /* Assets.xcassets */,
 				846552442996955E00E3776D /* LaunchScreen.storyboard */,
 				846552472996955E00E3776D /* Info.plist */,
+				8496D0CC2998ECD400E28CD3 /* Functions.swift */,
 			);
 			path = BrandsTester;
 			sourceTree = "<group>";
@@ -105,6 +110,7 @@
 			children = (
 				8465523D2996955C00E3776D /* BrandsVC.swift */,
 				8496D0C82998482000E28CD3 /* SneakersInfoVC.swift */,
+				8496D0CE2999023000E28CD3 /* BrandSneakersVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -183,10 +189,12 @@
 				8496D0C92998482000E28CD3 /* SneakersInfoVC.swift in Sources */,
 				849E32142997E5050040D734 /* Data.swift in Sources */,
 				8465523E2996955C00E3776D /* BrandsVC.swift in Sources */,
+				8496D0CD2998ECD400E28CD3 /* Functions.swift in Sources */,
 				8465524E299699D600E3776D /* TableViewCell.swift in Sources */,
 				8465525029978FB800E3776D /* Brands.swift in Sources */,
 				8496D0CB29984F6500E28CD3 /* Sneakers.swift in Sources */,
 				849E32122997CE430040D734 /* GoodsCollectionViewCell.swift in Sources */,
+				8496D0CF2999023000E28CD3 /* BrandSneakersVC.swift in Sources */,
 				8465523A2996955C00E3776D /* AppDelegate.swift in Sources */,
 				8465523C2996955C00E3776D /* SceneDelegate.swift in Sources */,
 			);
