@@ -9,7 +9,7 @@ import UIKit
 
 class BrandSneakersVC: UIViewController {
 
-    var brand = ""
+    var brand = "Error"
     var sneakers = [Sneakers]()
     var filteredSneakers = [Sneakers]()
     var choosenSneakers: Sneakers?
@@ -67,9 +67,9 @@ extension BrandSneakersVC: UISearchBarDelegate{
             filteredSneakers = sneakers
         } else {
             filteredSneakers = sneakers.filter {
-                $0.model.contains(searchText)
-                || $0.id!.contains(searchText)
-                || $0.description!.contains(searchText)
+                $0.model.lowercased().contains(searchText.lowercased())
+                || $0.id!.lowercased().contains(searchText.lowercased())
+                || $0.description!.lowercased().contains(searchText.lowercased())
             }
         }
         tableView.reloadData()

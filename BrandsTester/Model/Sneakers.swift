@@ -28,8 +28,8 @@ struct Sneakers {
         self.brand = brand
         self.model = model
         price = "-"
-        id = "No ID"
-        description = "No Description"
+        id = ""
+        description = ""
         photos = [nil]
     }
     
@@ -37,8 +37,8 @@ struct Sneakers {
         self.brand = brand
         self.model = model
         price = "-"
-        id = "No ID"
-        description = "No Description"
+        id = ""
+        description = ""
         self.photos = photos
     }
 }

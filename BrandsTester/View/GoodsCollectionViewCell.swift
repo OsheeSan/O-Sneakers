@@ -22,24 +22,6 @@ class GoodsCollectionViewCell: UICollectionViewCell {
         }
     }
     
-//    var brand = "" {
-//        didSet {
-//
-//        }
-//    }
-//    var model = "" {
-//        didSet{
-//            if let image = UIImage(named: nameToImage(brand: brand, model: model)) {
-//                imageView.image = image
-//                NameLabel.textColor = .black
-//            } else {
-//                imageView.image = UIImage(named: "sneakers-no-image")
-//                NameLabel.textColor = .white
-//            }
-//
-//        }
-//    }
-    
     var imageView: UIImageView!
     
     var NameLabel: UILabel!

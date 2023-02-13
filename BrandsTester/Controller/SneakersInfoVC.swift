@@ -9,9 +9,6 @@ import UIKit
 
 class SneakersInfoVC: UIViewController {
     
-    var brand = ""
-    var model = ""
-    
     var sneakers: Sneakers?
     
     override func viewDidLoad() {
