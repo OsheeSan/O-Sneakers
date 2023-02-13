@@ -10,12 +10,12 @@ import Foundation
 struct Sneakers {
     var brand: String
     var model: String
-    var price: Double?
+    var price: String?
     var id: String?
     var description: String?
     var photos = [String?]()
     
-    init(brand: String, model: String, price: Double, id: String, description: String, photos: [String]) {
+    init(brand: String, model: String, price: String, id: String, description: String, photos: [String]) {
         self.brand = brand
         self.model = model
         self.price = price
@@ -27,7 +27,7 @@ struct Sneakers {
     init(brand: String, model: String){
         self.brand = brand
         self.model = model
-        price = 999
+        price = "-"
         id = "No ID"
         description = "No Description"
         photos = [nil]
@@ -36,7 +36,7 @@ struct Sneakers {
     init(brand: String, model: String, photos: [String]){
         self.brand = brand
         self.model = model
-        price = 999
+        price = "-"
         id = "No ID"
         description = "No Description"
         self.photos = photos

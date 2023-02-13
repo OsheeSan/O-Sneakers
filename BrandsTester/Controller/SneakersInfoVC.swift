@@ -24,7 +24,7 @@ class SneakersInfoVC: UIViewController {
 
 extension SneakersInfoVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,14 +37,25 @@ extension SneakersInfoVC: UITableViewDelegate, UITableViewDataSource {
             imageView.layer.cornerRadius = 20
             return cell!
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "brand")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "simpleCell")
             let brandLabel = cell?.viewWithTag(1) as! UILabel
+            let label = cell?.viewWithTag(2) as! UILabel
+            label.text = "Brand :"
             brandLabel.text = sneakers?.brand
             return cell!
         case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "model")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "simpleCell")
             let modelLabel = cell?.viewWithTag(1) as! UILabel
+            let label = cell?.viewWithTag(2) as! UILabel
+            label.text = "Model :"
             modelLabel.text = sneakers?.model
+            return cell!
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "simpleCell")
+            let priceLabel = cell?.viewWithTag(1) as! UILabel
+            let label = cell?.viewWithTag(2) as! UILabel
+            label.text = "Price :"
+            priceLabel.text = "$ " + (sneakers?.price)!
             return cell!
         default:
             return TableViewCell()

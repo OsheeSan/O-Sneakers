@@ -11,9 +11,12 @@ class BrandSneakersVC: UIViewController {
 
     var brand = ""
     var sneakers = [Sneakers]()
+    var filteredSneakers = [Sneakers]()
     var choosenSneakers: Sneakers?
     let data = Data()
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
@@ -25,6 +28,7 @@ class BrandSneakersVC: UIViewController {
                 break
             }
         }
+        filteredSneakers = sneakers
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -38,21 +42,37 @@ class BrandSneakersVC: UIViewController {
 
 extension BrandSneakersVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        sneakers.count
+        filteredSneakers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "modelCell")
         let modelLabel = cell?.viewWithTag(1) as! UILabel
-        modelLabel.text = sneakers[indexPath.row].model
+        modelLabel.text = filteredSneakers[indexPath.row].model
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        choosenSneakers = sneakers[indexPath.row]
+        choosenSneakers = filteredSneakers[indexPath.row]
         performSegue(withIdentifier: "showSneakers", sender: UITableViewCell())
     }
     
     
 }
+
+extension BrandSneakersVC: UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            filteredSneakers = sneakers
+        } else {
+            filteredSneakers = sneakers.filter {
+                $0.model.contains(searchText)
+                || $0.id!.contains(searchText)
+                || $0.description!.contains(searchText)
+            }
+        }
+        tableView.reloadData()
+    }
+}
+
