@@ -9,14 +9,14 @@ import UIKit
 
 class BrandsVC: UIViewController {
     
+    let data = Data()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
         overrideUserInterfaceStyle = .dark
         self.tabBarController?.tabBar.backgroundColor = .black
     }
-    
-    let data = Data()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSneakers" {

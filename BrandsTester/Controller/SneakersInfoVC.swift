@@ -18,7 +18,10 @@ class SneakersInfoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         blurredEffectView.frame = view.bounds
+        let slider = view.viewWithTag(1)
+        slider?.layer.cornerRadius = (slider?.frame.height)!/2
         view.addSubview(blurredEffectView)
+        view.sendSubviewToBack(blurredEffectView)
         view.backgroundColor = UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 0))
         overrideUserInterfaceStyle = .dark
     }
@@ -28,10 +31,10 @@ class SneakersInfoVC: UIViewController {
 extension SneakersInfoVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         view.addSubview(tableView)
-        tableView.backgroundColor = UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 0.4))
+        tableView.backgroundColor = UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 0.0))
         tableView.clipsToBounds = true
         tableView.layer.cornerRadius = 20
-        return 5
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -39,11 +42,10 @@ extension SneakersInfoVC: UITableViewDelegate, UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "image")
             imagesCollectionView = cell?.viewWithTag(1) as? UICollectionView
-            imagesCollectionView?.clipsToBounds = true
-            imagesCollectionView?.layer.cornerRadius = 20
-            cell!.backgroundView?.frame = CGRectOffset(cell!.frame, 10, 10);
+            imagesCollectionView?.backgroundColor = UIColor(cgColor: CGColor(red: 0.572, green: 0.102, blue: 0.123, alpha: 1))
             cell?.clipsToBounds = true
             cell?.layer.cornerRadius = 20
+            cell?.backgroundColor = UIColor(cgColor: CGColor(red: 0.572, green: 0.102, blue: 0.123, alpha: 1))
             return cell!
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "simpleCell")
@@ -51,10 +53,8 @@ extension SneakersInfoVC: UITableViewDelegate, UITableViewDataSource {
             let label = cell?.viewWithTag(2) as! UILabel
             label.text = "Brand :"
             brandLabel.text = sneakers?.brand
-            cell?.clipsToBounds = true
-            cell?.layer.cornerRadius = (cell?.frame.height)!/2
-            cell?.backgroundColor = .black
             cell!.backgroundView?.frame = CGRectOffset(cell!.frame, 10, 10);
+            cell?.backgroundColor = UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 0))
             return cell!
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "simpleCell")
@@ -62,10 +62,8 @@ extension SneakersInfoVC: UITableViewDelegate, UITableViewDataSource {
             let label = cell?.viewWithTag(2) as! UILabel
             label.text = "Model :"
             modelLabel.text = sneakers?.model
-            cell?.clipsToBounds = true
-            cell?.layer.cornerRadius = (cell?.frame.height)!/2
-            cell?.backgroundColor = .black
             cell!.backgroundView?.frame = CGRectOffset(cell!.frame, 10, 10);
+            cell?.backgroundColor = UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 0))
             return cell!
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "simpleCell")
@@ -73,37 +71,44 @@ extension SneakersInfoVC: UITableViewDelegate, UITableViewDataSource {
             let label = cell?.viewWithTag(2) as! UILabel
             label.text = "Price :"
             priceLabel.text = "$ " + (sneakers?.price)!
-            cell?.clipsToBounds = true
-            cell?.layer.cornerRadius = (cell?.frame.height)!/2
-            cell?.backgroundColor = .black
             cell!.backgroundView?.frame = CGRectOffset(cell!.frame, 10, 10);
+            cell?.backgroundColor = UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 0))
             return cell!
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "simpleCell")
             let idLabel = cell?.viewWithTag(1) as! UILabel
             let label = cell?.viewWithTag(2) as! UILabel
-            label.text = "ID :"
-            idLabel.text = sneakers?.id
-            cell?.clipsToBounds = true
-            cell?.layer.cornerRadius = (cell?.frame.height)!/2
-            cell?.backgroundColor = .black
+            label.text = "Full Name :"
+            idLabel.text = sneakers?.fullName
             cell!.backgroundView?.frame = CGRectOffset(cell!.frame, 10, 10);
+            cell?.backgroundColor = UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 0))
+            return cell!
+        case 5:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "descriptionCell")
+            let descriptionLabel = cell?.viewWithTag(1) as! UILabel
+            descriptionLabel.text = sneakers?.description
+            cell?.backgroundColor = UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 0))
             return cell!
         default:
             return TableViewCell()
         }
+        
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
+        switch indexPath.row{
         case 0:
-            return tableView.frame.width*9/16
-        default:
+            if let image = UIImage(named: (sneakers?.photos[0])!){
+                return tableView.frame.width*image.size.height/image.size.width //UITableView.automaticDimension
+            }
+            return tableView.frame.width*12/16
+        case 1...4:
             return 90
+        default:
+            return UITableView.automaticDimension
         }
     }
-    
-    
 }
 
 extension SneakersInfoVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -123,9 +128,7 @@ extension SneakersInfoVC: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width: CGFloat = collectionView.frame.width
-        let height: CGFloat = width*9/16
-        return CGSize(width: width, height: height)
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
     
 }

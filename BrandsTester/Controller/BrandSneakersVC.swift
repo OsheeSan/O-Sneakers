@@ -69,7 +69,7 @@ extension BrandSneakersVC: UISearchBarDelegate{
         } else {
             filteredSneakers = sneakers.filter {
                 $0.model.lowercased().contains(searchText.lowercased())
-                || $0.id!.lowercased().contains(searchText.lowercased())
+                || $0.fullName!.lowercased().contains(searchText.lowercased())
                 || $0.description!.lowercased().contains(searchText.lowercased())
             }
         }

@@ -11,16 +11,16 @@ struct Sneakers {
     var brand: String
     var model: String
     var price: String?
-    var id: String?
+    var fullName: String?
     var description: String?
-    var photos = [String?]() //photos should be 16/9
+    var photos = [String?]() 
     var sneakersIcon: String
     
-    init(brand: String, model: String, price: String, id: String, description: String, photos: [String]) {
+    init(brand: String, model: String, price: String, fullName: String, description: String, photos: [String]) {
         self.brand = brand
         self.model = model
         self.price = price
-        self.id = id
+        self.fullName = fullName
         self.description = description
         self.photos = photos
         sneakersIcon = nameToImage(brand: brand, model: model)
@@ -30,7 +30,7 @@ struct Sneakers {
         self.brand = brand
         self.model = model
         price = "-"
-        id = ""
+        fullName = ""
         description = ""
         photos = ["mn-sneakers-no-image"]
         sneakersIcon = nameToImage(brand: brand, model: model)
@@ -40,7 +40,7 @@ struct Sneakers {
         self.brand = brand
         self.model = model
         price = "-"
-        id = ""
+        fullName = ""
         description = ""
         self.photos = photos
         sneakersIcon = nameToImage(brand: brand, model: model)
