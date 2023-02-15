@@ -11,8 +11,6 @@ class SneakersInfoVC: UIViewController {
     
     var sneakers: Sneakers?
     
-    var imageName: String?
-    
     var imagesCollectionView: UICollectionView?
     
     let blurredEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
@@ -20,7 +18,6 @@ class SneakersInfoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         blurredEffectView.frame = view.bounds
-        imageName = sneakers?.photos[0]
         view.addSubview(blurredEffectView)
         view.backgroundColor = UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 0))
         overrideUserInterfaceStyle = .dark
@@ -42,7 +39,11 @@ extension SneakersInfoVC: UITableViewDelegate, UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "image")
             imagesCollectionView = cell?.viewWithTag(1) as? UICollectionView
+            imagesCollectionView?.clipsToBounds = true
+            imagesCollectionView?.layer.cornerRadius = 20
             cell!.backgroundView?.frame = CGRectOffset(cell!.frame, 10, 10);
+            cell?.clipsToBounds = true
+            cell?.layer.cornerRadius = 20
             return cell!
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "simpleCell")
@@ -113,7 +114,11 @@ extension SneakersInfoVC: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath)
         let imageView = cell.viewWithTag(1) as! UIImageView
-        imageView.image = UIImage(named: (sneakers?.photos[indexPath.row])!)
+        if sneakers?.photos.first != nil {
+            imageView.image = UIImage(named: (sneakers?.photos[indexPath.row])!)
+        } else {
+            imageView.image = UIImage(named: "mn-sneakers-no-image")
+        }
         return cell
     }
     
