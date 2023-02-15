@@ -10,6 +10,77 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Find SneakersVC-->
+        <scene sceneID="zwo-Yo-Hsu">
+            <objects>
+                <viewController id="YKn-IO-I9T" customClass="FindSneakersVC" customModule="BrandsTester" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TJp-t0-LQf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Find a model..." translatesAutoresizingMaskIntoConstraints="NO" id="Rky-ip-VbU">
+                                <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="0KV-Qs-DvM"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="YKn-IO-I9T" id="ieA-dr-zFs"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="He6-1F-JPK">
+                                <rect key="frame" x="16" y="113" width="288" height="406"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sneakersCell" rowHeight="60" id="7IB-wC-IdF">
+                                        <rect key="frame" x="0.0" y="50" width="288" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7IB-wC-IdF" id="rJ0-xb-9ES">
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sneakers name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSW-KE-NjM">
+                                                    <rect key="frame" x="66.5" y="14.5" width="155" height="31.5"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="23"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="aSW-KE-NjM" firstAttribute="centerY" secondItem="rJ0-xb-9ES" secondAttribute="centerY" id="mtQ-QN-F4x"/>
+                                                <constraint firstItem="aSW-KE-NjM" firstAttribute="centerX" secondItem="rJ0-xb-9ES" secondAttribute="centerX" id="sBg-uU-7aw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="YKn-IO-I9T" id="sPz-JI-k62"/>
+                                    <outlet property="delegate" destination="YKn-IO-I9T" id="hqh-B9-xzS"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kE3-7x-Ezg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rky-ip-VbU" firstAttribute="top" secondItem="kE3-7x-Ezg" secondAttribute="top" id="0VA-H1-6sq"/>
+                            <constraint firstItem="kE3-7x-Ezg" firstAttribute="bottom" secondItem="He6-1F-JPK" secondAttribute="bottom" id="4pW-eG-Aou"/>
+                            <constraint firstItem="He6-1F-JPK" firstAttribute="leading" secondItem="kE3-7x-Ezg" secondAttribute="leading" constant="16" id="NFK-9p-fkk"/>
+                            <constraint firstItem="He6-1F-JPK" firstAttribute="top" secondItem="Rky-ip-VbU" secondAttribute="bottom" constant="25" id="NNJ-Bt-Z5h"/>
+                            <constraint firstItem="Rky-ip-VbU" firstAttribute="leading" secondItem="kE3-7x-Ezg" secondAttribute="leading" id="evV-ug-e6f"/>
+                            <constraint firstItem="kE3-7x-Ezg" firstAttribute="trailing" secondItem="He6-1F-JPK" secondAttribute="trailing" constant="16" id="h7z-k5-VTr"/>
+                            <constraint firstItem="Rky-ip-VbU" firstAttribute="trailing" secondItem="kE3-7x-Ezg" secondAttribute="trailing" id="mz1-qf-8c4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="yZL-oz-z0c"/>
+                    <connections>
+                        <outlet property="tableView" destination="He6-1F-JPK" id="0Xh-g2-vuN"/>
+                        <segue destination="TQC-3l-TK9" kind="showDetail" identifier="showSneakers" id="f44-wf-VaD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KFJ-BK-mNQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2111" y="-739"/>
+        </scene>
         <!--Brand SneakersVC-->
         <scene sceneID="FoA-Xb-s3o">
             <objects>
@@ -79,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nn5-mK-8vC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2940" y="-376"/>
+            <point key="canvasLocation" x="3293" y="-739"/>
         </scene>
         <!--O-Sneakers-->
         <scene sceneID="tne-QT-ifu">
@@ -90,7 +161,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Wng-CD-2yB">
-                                <rect key="frame" x="0.0" y="92.5" width="320" height="475.5"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableViewCell" rowHeight="140" id="9nm-xJ-4du" customClass="TableViewCell" customModule="BrandsTester" customModuleProvider="target">
@@ -187,6 +258,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="MBy-KQ-ivQ">
                             <color key="tintColor" red="0.84313725490000002" green="0.27450980390000002" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <segue destination="YKn-IO-I9T" kind="show" identifier="findSneakers" id="VOn-aa-dhQ"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -311,7 +385,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGn-J9-hnb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2940" y="398.23943661971833"/>
+            <point key="canvasLocation" x="3293" y="26"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Z6x-Ms-wqk">
@@ -398,7 +472,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="08g-ps-nZG"/>
+        <segue reference="f44-wf-VaD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cart" catalog="system" width="128" height="102"/>
