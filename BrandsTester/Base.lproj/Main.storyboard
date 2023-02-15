@@ -32,7 +32,7 @@
                                 <rect key="frame" x="16" y="113" width="288" height="406"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sneakersCell" rowHeight="60" id="7IB-wC-IdF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sneakersCell" rowHeight="60" id="7IB-wC-IdF">
                                         <rect key="frame" x="0.0" y="50" width="288" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7IB-wC-IdF" id="rJ0-xb-9ES">
@@ -93,7 +93,7 @@
                                 <rect key="frame" x="16" y="113" width="288" height="406"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="modelCell" rowHeight="60" id="1V7-S9-c2H">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="modelCell" rowHeight="60" id="1V7-S9-c2H">
                                         <rect key="frame" x="0.0" y="50" width="288" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1V7-S9-c2H" id="vkU-Go-Z3g">
@@ -255,6 +255,9 @@
                         <barButtonItem key="backBarButtonItem" title="Sneakers" id="CNT-Wb-bzW"/>
                         <barButtonItem key="leftBarButtonItem" image="info.circle" catalog="system" id="eLc-Hl-gxW">
                             <color key="tintColor" red="0.84313725490000002" green="0.27450980390000002" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="infoButton:" destination="BYZ-38-t0r" id="wle-qx-Cgr"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="MBy-KQ-ivQ">
                             <color key="tintColor" red="0.84313725490000002" green="0.27450980390000002" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -394,7 +397,7 @@
                     <tabBarItem key="tabBarItem" title="" image="list.bullet" catalog="system" id="ExM-GG-igg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="j7h-mY-reF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.84313725490000002" green="0.27450980390000002" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -472,7 +475,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="f44-wf-VaD"/>
+        <segue reference="OBi-0c-RKi"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cart" catalog="system" width="128" height="102"/>

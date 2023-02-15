@@ -32,6 +32,12 @@ class BrandsVC: UIViewController {
         
     }
     
+    
+    @IBAction func infoButton(_ sender: UIBarButtonItem) {
+        guard let url = URL(string: "https://github.com/OsheeSan") else { return }
+        UIApplication.shared.open(url)
+    }
+    
 }
 
 extension BrandsVC: UITableViewDelegate, UITableViewDataSource {
