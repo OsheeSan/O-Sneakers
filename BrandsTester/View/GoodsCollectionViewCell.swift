@@ -11,7 +11,7 @@ class GoodsCollectionViewCell: UICollectionViewCell {
     
     var sneakers: Sneakers? {
         didSet{
-            if let image = UIImage(named: nameToImage(brand: sneakers!.brand, model: sneakers!.model)) {
+            if let image = UIImage(named: sneakers!.sneakersIcon) {
                 imageView.image = image
                 NameLabel.textColor = .black
             } else {
