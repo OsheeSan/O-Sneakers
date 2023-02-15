@@ -13,6 +13,8 @@ class SneakersInfoVC: UIViewController {
     
     var imageName: String?
     
+    var imagesCollectionView: UICollectionView?
+    
     let blurredEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
     
     override func viewDidLoad() {
@@ -39,11 +41,7 @@ extension SneakersInfoVC: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "image")
-            let imageView = cell?.viewWithTag(1) as! UIImageView
-            imageView.backgroundColor = .green
-            imageView.layer.cornerRadius = 20
-            imageView.image = UIImage(named: imageName!)
-            imageView.contentMode = .scaleAspectFill
+            imagesCollectionView = cell?.viewWithTag(1) as? UICollectionView
             cell!.backgroundView?.frame = CGRectOffset(cell!.frame, 10, 10);
             return cell!
         case 1:
@@ -98,11 +96,31 @@ extension SneakersInfoVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return 300
+            return tableView.frame.width*9/16
         default:
             return 90
         }
     }
     
+    
+}
+
+extension SneakersInfoVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return (sneakers?.photos.count)!
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath)
+        let imageView = cell.viewWithTag(1) as! UIImageView
+        imageView.image = UIImage(named: (sneakers?.photos[indexPath.row])!)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width: CGFloat = collectionView.frame.width
+        let height: CGFloat = width*9/16
+        return CGSize(width: width, height: height)
+    }
     
 }
