@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8422874F299C818C00369D53 /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8422874E299C818C00369D53 /* ImageVC.swift */; };
 		8465523A2996955C00E3776D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846552392996955C00E3776D /* AppDelegate.swift */; };
 		8465523C2996955C00E3776D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465523B2996955C00E3776D /* SceneDelegate.swift */; };
 		8465523E2996955C00E3776D /* BrandsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465523D2996955C00E3776D /* BrandsVC.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8422874E299C818C00369D53 /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
 		846552362996955C00E3776D /* BrandsTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrandsTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		846552392996955C00E3776D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8465523B2996955C00E3776D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				8465523D2996955C00E3776D /* BrandsVC.swift */,
 				8496D0C82998482000E28CD3 /* SneakersInfoVC.swift */,
 				8496D0CE2999023000E28CD3 /* BrandSneakersVC.swift */,
+				8422874E299C818C00369D53 /* ImageVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				8465525029978FB800E3776D /* Brand.swift in Sources */,
 				8496D0CB29984F6500E28CD3 /* Sneakers.swift in Sources */,
 				849E32122997CE430040D734 /* GoodsCollectionViewCell.swift in Sources */,
+				8422874F299C818C00369D53 /* ImageVC.swift in Sources */,
 				8496D0CF2999023000E28CD3 /* BrandSneakersVC.swift in Sources */,
 				8465523A2996955C00E3776D /* AppDelegate.swift in Sources */,
 				8465523C2996955C00E3776D /* SceneDelegate.swift in Sources */,

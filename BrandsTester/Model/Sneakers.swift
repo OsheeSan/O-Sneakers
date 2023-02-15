@@ -30,7 +30,7 @@ struct Sneakers {
         price = "-"
         id = ""
         description = ""
-        photos = [nil]
+        photos = ["sneakers-no-image"]
     }
     
     init(brand: String, model: String, photos: [String]){

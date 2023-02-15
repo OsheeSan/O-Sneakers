@@ -8,7 +8,7 @@
 import Foundation
 
 class Data {
-    var brands: [Brand] = [Brand(name: "Adidas", goods: [Sneakers(brand: "Adidas", model: "Superstar"),
+    var brands: [Brand] = [Brand(name: "Adidas", goods: [Sneakers(brand: "Adidas", model: "Superstar", photos: ["adidas-superstar"]),
                                                          Sneakers(brand: "Adidas", model: "Supercourt"),
                                                          Sneakers(brand: "Adidas", model: "Ozweego"),
                                                          Sneakers(brand: "Adidas", model: "Nite Jogger"),

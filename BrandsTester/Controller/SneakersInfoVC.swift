@@ -11,11 +11,14 @@ class SneakersInfoVC: UIViewController {
     
     var sneakers: Sneakers?
     
+    var imageName: String?
+    
     let blurredEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         blurredEffectView.frame = view.bounds
+        imageName = sneakers?.photos[0]
         view.addSubview(blurredEffectView)
         view.backgroundColor = UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 0))
         overrideUserInterfaceStyle = .dark
@@ -38,8 +41,9 @@ extension SneakersInfoVC: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "image")
             let imageView = cell?.viewWithTag(1) as! UIImageView
             imageView.backgroundColor = .green
-            imageView.alpha = 0.5
             imageView.layer.cornerRadius = 20
+            imageView.image = UIImage(named: imageName!)
+            imageView.contentMode = .scaleAspectFill
             cell!.backgroundView?.frame = CGRectOffset(cell!.frame, 10, 10);
             return cell!
         case 1:
@@ -94,7 +98,7 @@ extension SneakersInfoVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return 200
+            return 300
         default:
             return 90
         }

@@ -217,14 +217,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="akK-h3-IHQ">
-                                                    <rect key="frame" x="40" y="36" width="240" height="128"/>
+                                                    <rect key="frame" x="24" y="36" width="272" height="128"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="akK-h3-IHQ" secondAttribute="bottom" constant="25" id="Qy1-a8-7sc"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="akK-h3-IHQ" secondAttribute="trailing" constant="24" id="fPC-Fs-pWn"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="akK-h3-IHQ" secondAttribute="trailing" constant="8" id="fPC-Fs-pWn"/>
                                                 <constraint firstItem="akK-h3-IHQ" firstAttribute="top" secondItem="1lb-LU-cwA" secondAttribute="topMargin" constant="25" id="ruo-HX-lZ3"/>
-                                                <constraint firstItem="akK-h3-IHQ" firstAttribute="leading" secondItem="1lb-LU-cwA" secondAttribute="leadingMargin" constant="24" id="wgX-Fy-4T2"/>
+                                                <constraint firstItem="akK-h3-IHQ" firstAttribute="leading" secondItem="1lb-LU-cwA" secondAttribute="leadingMargin" constant="8" id="wgX-Fy-4T2"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
