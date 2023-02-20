@@ -1,0 +1,6 @@
+framework module Pods_BrandsTester {
+  umbrella header "Pods-BrandsTester-umbrella.h"
+
+  export *
+  module * { export * }
+}
